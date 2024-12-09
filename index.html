@@ -155,6 +155,50 @@
             }
         }
 
+        /* Newsletter Popup Styles */
+        #newsletterPopup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .newsletter-form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            width: 300px;
+        }
+
+        .newsletter-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            font-size: 1em;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .newsletter-form button {
+            background-color: #0277bd;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .newsletter-form button:hover {
+            background-color: #01579b;
+        }
+
     </style>
 </head>
 <body>
@@ -219,8 +263,8 @@
                     <strong>„7 nawyków skutecznego działania”</strong> – Stephen R. Covey
                 </li>
                 <li>
-                    <img src="obrazy/potega_nawyku.jpg" alt="Potęga nawyku" class="book-cover">
-                    <strong>„Potęga nawyku”</strong> – Charles Duhigg
+                    <img src="obrazy/siła_nawyku.jpg" alt="Siła nawyku" class="book-cover">
+                    <strong>„Siła nawyku”</strong> – Charles Duhigg
                 </li>
                 <li>
                     <img src="obrazy/atomowe.jpg" alt="Atomowe Nawyki" class="book-cover">
@@ -234,6 +278,14 @@
         <p>© 2024 Antoni Pieszczoch. Wszelkie prawa zastrzeżone.</p>
     </footer>
 
+    <div id="newsletterPopup">
+        <div class="newsletter-form">
+            <h2>Subskrybuj newsletter</h2>
+            <input type="email" id="email" placeholder="Wprowadź swój e-mail" required>
+            <button onclick="submitEmail()">Zapisz się</button>
+        </div>
+    </div>
+
     <script>
         let images = [
             "obrazy/barirlandzki.jpeg",
@@ -243,16 +295,14 @@
         ];
         let currentImageIndex = 0;
 
-        function showTab(tabName) {
-            const tabs = document.querySelectorAll('.tab-content');
-            tabs.forEach(tab => {
-                tab.classList.remove('active');
-            });
-
-            const activeTab = document.getElementById(tabName);
-            activeTab.classList.add('active');
+        // Funkcja do wyświetlania zakładek
+        function showTab(tab) {
+            let tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            document.getElementById(tab).classList.add('active');
         }
 
+        // Funkcja do zmiany zdjęcia w galerii
         function changeImage(direction) {
             if (direction === 'left') {
                 currentImageIndex = (currentImageIndex === 0) ? images.length - 1 : currentImageIndex - 1;
@@ -261,7 +311,20 @@
             }
             document.getElementById('currentImage').src = images[currentImageIndex];
         }
-    </script>
 
-</body>
-</html>
+        // Funkcja do zapisania się na newsletter
+        function submitEmail() {
+            let email = document.getElementById('email').value;
+            if (email) {
+                alert(`Dziękujemy za zapisanie się do newslettera! Twój e-mail: ${email}`);
+                document.getElementById('newsletterPopup').style.display = 'none';
+            } else {
+                alert('Proszę wprowadzić poprawny adres e-mail.');
+            }
+        }
+
+        // Otwórz popup z newsletterem po 5 sekundach
+    setTimeout(() => {
+        document.getElementById('newsletterPopup').style.display = 'flex';
+    }, 5000);
+</script>
