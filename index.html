@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strona Antoniego :D</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e0f7fa;
+            color: #333;
+        }
+
+        header {
+            background-color: #0277bd;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #01579b;
+        }
+
+        .navbar a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+            font-size: 1.2em;
+        }
+
+        .navbar a:hover {
+            background-color: #0288d1;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .tab-title {
+            font-size: 2em;
+            color: #0277bd;
+        }
+
+        .tab-description {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        .link {
+            color: #0288d1;
+            font-size: 1.5em;
+            text-decoration: none;
+        }
+
+        .link:hover {
+            text-decoration: underline;
+        }
+
+        .book-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .book-list li {
+            margin: 15px 0;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+        }
+
+        .book-cover {
+            width: 100px;
+            height: 150px;
+            margin-right: 20px;
+            vertical-align: middle;
+        }
+
+        .coming-soon {
+            text-align: center;
+            font-size: 2em;
+            color: #0277bd;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+            padding: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #0277bd;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Strona Antoniego :D</h1>
+    </header>
+
+    <div class="navbar">
+        <a href="javascript:void(0);" onclick="showTab('about')">O mnie</a>
+        <a href="javascript:void(0);" onclick="showTab('youtube')">Kanał na YouTube</a>
+        <a href="javascript:void(0);" onclick="showTab('gallery')">Galeria zdjęć</a>
+        <a href="javascript:void(0);" onclick="showTab('books')">Lista książek do przeczytania</a>
+    </div>
+
+    <div class="content">
+        <div id="about" class="tab-content active">
+            <h2 class="tab-title">O mnie</h2>
+            <p class="tab-description">
+                Cześć! Nazywam się Antoni, jestem youtuberem specjalizującym się w sferze rozwoju osobistego. Moja pasja to pomaganie innym w osiąganiu ich celów i pełnego potencjału. Od zawsze fascynowały mnie wyzwania, które pozwalają mi wyjść poza strefę komfortu i rozwijać swoje umiejętności w różnych dziedzinach. Lubię podejmować ambitne zadania, bo to daje mi poczucie spełnienia i sprawia, że staję się coraz lepszą wersją siebie.
+
+                Moje zainteresowanie rozwojem osobistym zaczęło się kilka lat temu, kiedy zacząłem pracować nad poprawą swojej kondycji fizycznej i psychicznej. Od zawsze byłem osobą, która ceniła wytrwałość i ciężką pracę. Zdecydowałem się połączyć te pasje z moją działalnością na YouTube, gdzie dzielę się doświadczeniami, poradami i przemyśleniami na temat rozwoju, siłowni, zdrowego stylu życia i motywacji. Moje filmy są dla osób, które pragną podjąć wyzwanie i wprowadzić realne zmiany w swoim życiu.
+
+                Chodzenie na siłownię stało się moją codzienną rutyną. Treningi nie tylko pomagają mi utrzymać dobrą formę, ale także stanowią dla mnie formę medytacji. To czas, który spędzam na poprawie swojego ciała i umysłu. Uważam, że rozwój osobisty to coś, czego nie można osiągnąć w krótkim czasie – to proces, który wymaga codziennej pracy, dyscypliny i motywacji. Chcę inspirować innych do podjęcia tej samej drogi i dążenia do stania się najlepszą wersją siebie.
+
+                W moich filmach poruszam tematy związane z ustawieniem celów, organizowaniem dnia, radzeniem sobie ze stresem oraz budowaniem silnej psychiki. Moim celem jest nie tylko motywować, ale także edukować i pomagać w przezwyciężaniu trudności, które napotykamy na drodze do sukcesu. Dążę do tego, aby każdy, kto ogląda moje filmy, poczuł się zmotywowany do działania i poczuł, że ma w sobie potencjał do osiągania wielkich rzeczy.
+            </p>
+        </div>
+
+        <div id="youtube" class="tab-content">
+            <h2 class="tab-title">Kanał na YouTube</h2>
+            <p><a href="https://www.youtube.com/@AntoniPieszczoch" class="link" target="_blank">Kliknij tutaj, aby odwiedzić mój kanał YouTube!</a></p>
+        </div>
+
+        <div id="gallery" class="tab-content">
+            <h2 class="tab-title">Galeria zdjęć</h2>
+            <p class="coming-soon">Coming soon...</p>
+            <div class="gallery">
+                <!-- Zakładając, że zdjęcia w folderze Obrazy mają format jpg lub png -->
+                <img src="obr/fajnaczapa.jpeg" alt="Zdjęcie 1">
+                <img src="obr/barirlandzki.jpeg" alt="Zdjęcie 2">
+                <img src="obr/stretching.jpeg" alt="Zdjęcie 3">
+                <img src="obr/czerwonabluza.jpg" alt="Zdjęcie 4">
+            </div>
+        </div>
+
+        <div id="books" class="tab-content">
+            <h2 class="tab-title">Lista książek do przeczytania</h2>
+            <ul class="book-list">
+                <li>
+                    <img src="Obrazy/myslenie_szybkie_i_wolne.jpg" alt="Myślenie, szybkie i wolne" class="book-cover">
+                    <strong>„Myślenie, szybkie i wolne”</strong> – Daniel Kahneman
+                </li>
+                <li>
+                    <img src="Obrazy/potega_nawyku.jpg" alt="Potęga nawyku" class="book-cover">
+                    <strong>„Potęga nawyku”</strong> – Charles Duhigg
+                </li>
+                <li>
+                    <img src="Obrazy/7_nawykow.jpg" alt="7 nawyków skutecznego działania" class="book-cover">
+                    <strong>„7 nawyków skutecznego działania”</strong> – Stephen R. Covey
+                </li>
+                <li>
+                    <img src="Obrazy/badz_najlepsza_wersja_siebie.jpg" alt="Bądź najlepszą wersją siebie" class="book-cover">
+                    <strong>„Bądź najlepszą wersją siebie”</strong> – Joe Dispenza
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Strona Antoniego :D</p>
+    </footer>
+
+    <script>
+        function showTab(tabName) {
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.getElementById(tabName).classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
